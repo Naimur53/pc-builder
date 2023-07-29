@@ -53,6 +53,9 @@ const LeftMenu = () => {
           <DownOutlined />
         </Space>
       </Dropdown>
+      <Link href="/pcBuilder" className="text-black no-underline	">
+        Pc Builder
+      </Link>
     </div>
   );
 };
