@@ -3,7 +3,7 @@ import React from "react";
 const HomeBanner = () => {
   return (
     <div className="container">
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid px-2 grid-cols-1 md:grid-cols-2 gap-5">
         <div className="">
           <h2 className="text-7xl mb-0">World best PC parts</h2>
           <p className="text-lg mt-5 leading-[20px]">

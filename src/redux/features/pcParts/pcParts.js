@@ -45,23 +45,25 @@ export const counterSlice = createSlice({
   name: "pcParts",
   initialState,
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    addProduct: (state, { payload }) => {
+      const allData = state.category.map((single) => {
+        if (single.category === payload.category) {
+          const pre = { ...single, selectedProduct: payload };
+          return pre;
+        }
+        return single;
+      });
+      state.category = allData;
+      // check all is all selected
+      const isAllSelected = allData.every(
+        (single) => Object.keys(single.selectedProduct).length
+      );
+      state.isAllSelected = isAllSelected;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { addProduct } = counterSlice.actions;
 
 export default counterSlice.reducer;

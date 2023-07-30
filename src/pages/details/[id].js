@@ -9,6 +9,7 @@ const ProductDetails = ({
     status,
     description,
     keyFeatures,
+    individualRating,
     averageRating,
     _id,
   },
@@ -19,10 +20,10 @@ const ProductDetails = ({
         <div className="max-w-[500px]">
           <img className="w-full" src={img} alt="product" />
         </div>
-        <div className="w-full">
-          <div className="flex flex-col md:flex-row md:justify-between items-start gap-1 md:items-center  mt-6">
+        <div className="w-full mt-10">
+          <div className="flex flex-col md:flex-row md:justify-between items-start gap-2 md:items-center  mt-6">
             <h2 className="mb-0 mt-0">{productName}</h2>
-            <span className="px-3 whitespace-nowrap text-sm py-1 bg-slate-200 rounded-md shadow">
+            <span className="px-3 whitespace-nowrap text-sm font-bold py-1 bg-slate-200 rounded-md shadow">
               {category}
             </span>
           </div>
@@ -33,14 +34,24 @@ const ProductDetails = ({
               {status}
             </span>
           </div>
-          <ReactStars count={5} size={24} value={averageRating} edit={false} />
+          <div className=" ">
+            <h4>
+              Average Rating:{" "}
+              <span className="text-red-400">{averageRating}</span>
+            </h4>
+
+            <h4>
+              Individual Rating:{" "}
+              <span className="text-blue-400">{individualRating}</span>
+            </h4>
+          </div>
           <div className="flex items-center gap-2">
             <p className="whitespace-nowrap font-bold m-0">Key Feature:</p>
-            <div className="flex gap-1 flex-wrap">
+            <div className="flex gap-3 flex-wrap">
               {keyFeatures.split(",").map((single) => (
                 <div
                   key={single}
-                  className="px-3 py-1 rounded-full border-red-300 border border-solid"
+                  className="px-3 py-1 rounded-full border-gray-300 border border-solid"
                 >
                   {single}
                 </div>
