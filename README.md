@@ -27,5 +27,23 @@ Follow the steps below to run the PC Builder project locally:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/pc-builder.git
+git clone https://github.com/naimur53/pc-builder.git
+```
+
+2. Run this command
+
+```bash
+cd pc-builder
+```
+
+3. install Node modules
+
+```bash
+npm install
+```
+
+4. run in local server
+
+```bash
+npm run dev
 ```
