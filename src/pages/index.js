@@ -27,7 +27,9 @@ export default function Home({ data }) {
 
 export async function getStaticProps({ params }) {
   try {
-    const res = await fetch(`http://localhost:5000/api/v1/products/random`);
+    const res = await fetch(
+      `https://pc-builder-backend2-naimur53.vercel.app/api/v1/products/random`
+    );
     if (!res.ok) {
       // Handle the case when the API returns an error
       return { notFound: true };

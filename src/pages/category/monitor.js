@@ -14,7 +14,7 @@ export async function getStaticProps() {
   // Fetch data from an API or database
   // In this example, we are using the sample data defined above
   const res = await fetch(
-    "http://localhost:5000/api/v1/products?category=Monitor"
+    "https://pc-builder-backend2-naimur53.vercel.app/api/v1/products?category=Monitor"
   );
   const data = await res.json();
   return {

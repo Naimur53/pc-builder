@@ -12,11 +12,12 @@ const ProductDetails = ({
     individualRating,
     averageRating,
     _id,
+    reviews,
   },
 }) => {
   return (
     <div className="container">
-      <div className="flex flex-col gap-10 md:flex-row">
+      <div className="flex flex-col items-center gap-10 xl:flex-row px-4">
         <div className="max-w-[500px]">
           <img className="w-full" src={img} alt="product" />
         </div>
@@ -60,6 +61,34 @@ const ProductDetails = ({
           </div>
         </div>
       </div>
+      <div className="mt-4 px-4">
+        <div className=" p-4">
+          <h2 className="text-2xl text-center font-bold mb-4">
+            Customer Reviews
+          </h2>
+          {reviews?.length ? (
+            <div className="space-y-4">
+              {reviews?.map((review, index) => (
+                <div key={index} className="border border-gray-300 rounded p-4">
+                  <div className="flex items-center mb-2">
+                    <img
+                      src={review.userImg}
+                      alt={review.userName}
+                      className="w-8 h-8 rounded-full mr-2"
+                    />
+                    <span className="font-semibold">{review.userName}</span>
+                  </div>
+                  <p className="text-gray-800">{review.description}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              <h4 className="text-center">No reviews found</h4>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
@@ -69,7 +98,9 @@ export default ProductDetails;
 export async function getStaticProps({ params }) {
   const { id } = params;
   try {
-    const res = await fetch(`http://localhost:5000/api/v1/products/${id}`);
+    const res = await fetch(
+      `https://pc-builder-backend2-naimur53.vercel.app/api/v1/products/${id}`
+    );
     if (!res.ok) {
       // Handle the case when the API returns an error
       return { notFound: true };
@@ -89,7 +120,9 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   // Fetch the list of dynamic IDs from an API or database
   // For this example, I'm using hardcoded IDs
-  const res = await fetch("http://localhost:5000/api/v1/products?limit=0");
+  const res = await fetch(
+    "https://pc-builder-backend2-naimur53.vercel.app/api/v1/products?limit=0"
+  );
   const all = await res.json();
 
   const ids = all.data.map((single) => single._id); // Replace this with the actual list of IDs
