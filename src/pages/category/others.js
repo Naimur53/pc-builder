@@ -5,7 +5,7 @@ const Others = ({ data }) => {
   return (
     <>
       <ShowCategoryData
-        title={"All Others product are there"}
+        title={"All Others product  "}
         data={data}
       ></ShowCategoryData>
     </>

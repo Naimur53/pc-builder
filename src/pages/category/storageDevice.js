@@ -5,7 +5,7 @@ const StorageDevice = ({ data }) => {
   return (
     <>
       <ShowCategoryData
-        title={"All Storage are there"}
+        title={"All Storage device"}
         data={data}
       ></ShowCategoryData>
     </>

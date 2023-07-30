@@ -1,15 +1,18 @@
 import SinglePcBuilderCategory from "@/components/PcBuilderComponents/SinglePcBuilderCategory";
+import { clearProduct } from "@/redux/features/pcParts/pcParts";
 import { Modal } from "antd";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const PcBuilder = () => {
   const { category, isAllSelected } = useSelector((state) => state.pcParts);
-  console.log(category);
+  //   console.log(category);
+  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
+    dispatch(clearProduct());
   };
 
   const handleOk = () => {

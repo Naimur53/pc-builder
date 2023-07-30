@@ -4,10 +4,7 @@ import React from "react";
 const Ram = ({ data }) => {
   return (
     <>
-      <ShowCategoryData
-        title={"All Ram are there"}
-        data={data}
-      ></ShowCategoryData>
+      <ShowCategoryData title={"All Ram  "} data={data}></ShowCategoryData>
     </>
   );
 };

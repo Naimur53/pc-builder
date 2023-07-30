@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HomeBanner = () => {
@@ -5,20 +7,27 @@ const HomeBanner = () => {
     <div className="container">
       <div className="grid px-2 grid-cols-1 md:grid-cols-2 gap-5">
         <div className="">
-          <h2 className="text-7xl mb-0">World best PC parts</h2>
-          <p className="text-lg mt-5 leading-[20px]">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit non
-            laboriosam alias omnis recusandae nam consequuntur, cumque unde
-            error veritatis quas. At necessitatibus accusantium maxime aperiam
-            reprehenderit repudiandae aliquam veniam.
+          <h2 className="text-5xl xl:text-7xl mb-0 xl:leading-[80px]">
+            World best <br /> PC parts
+          </h2>
+          <p className="text-lg my-5 md:my-10 leading-[20px]   w-full md:w-2/3">
+            Welcome to our PC Builder Website, where you have the power to
+            create your perfect computing experience. Whether you&apos;re a
+            hardcore gamer, a content creator, or a professional seeking
+            top-notch performance.
           </p>
-          <button className="px-3 py-2 outline-none border-green-300 border rounded border-solid font-bold bg-green-200 ">
-            Create Your PC Now
-          </button>
+          <Link href={"pcBuilder"}>
+            <button className="px-3 py-2 text-lg outline-none  border-none rounded  font-bold bg-blue-500 text-white ">
+              Create Your PC Now
+            </button>
+          </Link>
         </div>
-        <img
+        <Image
+          height={400}
+          width={400}
+          layout="responsive"
           className="w-full"
-          src="https://icon2.cleanpng.com/20180401/whq/kisspng-laptop-computer-mouse-gaming-computer-personal-com-pc-game-5ac182060a5064.1648230215226311740423.jpg"
+          src="https://i.ibb.co/pJzkQ9j/istockphoto-619052288-612x612-removebg-preview.png"
           alt=""
         />
       </div>

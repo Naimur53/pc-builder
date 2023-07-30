@@ -30,7 +30,7 @@ const Navbar = () => {
               </div>
 
               <Drawer
-                title={"Brand Here"}
+                title={"Pc Builder"}
                 placement="right"
                 closable={true}
                 onClose={showDrawer}

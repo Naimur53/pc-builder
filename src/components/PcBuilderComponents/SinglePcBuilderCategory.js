@@ -9,7 +9,7 @@ const SinglePcBuilderCategory = ({ img, category, selectedProduct }) => {
       </div>
       <div className="flex md:flex-row flex-col items-center justify-between w-full">
         <div>
-          <div className="flex justify-center items-center gap-3 w-full">
+          <div className="flex justify-center md:justify-start items-center gap-3 w-full">
             <h2>{category}</h2>
             <span className="bg-gray-200 px-3 rounded-md py-1">Required</span>
           </div>

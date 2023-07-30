@@ -1,4 +1,6 @@
+import Footer from "@/components/Shared/Footer/Footer";
 import Navbar from "@/components/Shared/Navbar/Navbar";
+import RootLayout from "@/components/Shared/RootLayout/RootLayout";
 import { store } from "@/redux/store";
 import "@/styles/globals.css";
 import { SessionProvider } from "next-auth/react";
@@ -12,8 +14,9 @@ export default function App({
     <div>
       <Provider store={store}>
         <SessionProvider session={session}>
-          <Navbar></Navbar>
-          <Component {...pageProps} />
+          <RootLayout>
+            <Component {...pageProps} />
+          </RootLayout>
         </SessionProvider>
       </Provider>
     </div>

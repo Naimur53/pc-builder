@@ -5,7 +5,7 @@ const PowerSupplyUnit = ({ data }) => {
   return (
     <>
       <ShowCategoryData
-        title={"All Power supply unit are there"}
+        title={"All Power supply unit  "}
         data={data}
       ></ShowCategoryData>
     </>

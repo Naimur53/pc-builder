@@ -4,10 +4,7 @@ import React from "react";
 const Monitor = ({ data }) => {
   return (
     <>
-      <ShowCategoryData
-        title={"All Monitor are there"}
-        data={data}
-      ></ShowCategoryData>
+      <ShowCategoryData title={"All Monitor "} data={data}></ShowCategoryData>
     </>
   );
 };

@@ -4,10 +4,7 @@ import ShowCategoryData from "@/components/Shared/ShowCategoryData/ShowCategoryD
 const Cpu = ({ data }) => {
   return (
     <>
-      <ShowCategoryData
-        title={"All cpu are there"}
-        data={data}
-      ></ShowCategoryData>
+      <ShowCategoryData title={"All cpu"} data={data}></ShowCategoryData>
     </>
   );
 };

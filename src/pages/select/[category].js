@@ -52,11 +52,11 @@ const SelectCategory = ({ category, data }) => {
               </div>
             </div>
             <button
-              className="px-5 text-xl py-2 disabled:bg-gray-500 disabled:opacity-75 rounded text-white  bg-blue-500 border-0 cursor-pointer"
+              className="px-5 whitespace-nowrap py-2 text-lg disabled:bg-gray-500 disabled:opacity-75 rounded text-white  bg-blue-500 border-0 cursor-pointer"
               disabled={single.status !== "In Stock"}
               onClick={() => handleSelect(single)}
             >
-              Select
+              Add to builder
             </button>
           </div>
         ))}

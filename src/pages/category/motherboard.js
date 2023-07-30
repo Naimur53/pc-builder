@@ -5,7 +5,7 @@ const Motherboard = ({ data }) => {
   return (
     <>
       <ShowCategoryData
-        title={"All motherboard are there"}
+        title={"All motherboard "}
         data={data}
       ></ShowCategoryData>
     </>

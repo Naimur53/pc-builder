@@ -60,10 +60,17 @@ export const counterSlice = createSlice({
       );
       state.isAllSelected = isAllSelected;
     },
+    clearProduct: (state) => {
+      state.category = state.category.map((single) => {
+        single.selectedProduct = {};
+        return single;
+      });
+      state.isAllSelected = false;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addProduct } = counterSlice.actions;
+export const { addProduct, clearProduct } = counterSlice.actions;
 
 export default counterSlice.reducer;
